@@ -3,7 +3,7 @@
 /**
 * the Base Controller class
 */
-class Controller
+abstract class Controller
 {
   protected $request;
   protected $action;
