@@ -24,7 +24,11 @@ abstract class Controller
 
   protected function returnView($viewmodel, $fullview)
   {
-    $view = 'views/' . get_class($this) . '/' . $this->action . '.php';
+    // the view to be used according to the action and the controller
+    // according to the Bootstrap class
+    // i.e controller = home, action = index
+    // then, view = views/home/index.php
+    $view = 'views/' . strtolower(get_class($this)) . '/' . $this->action . '.php';
     if ($fullview) {
       require('views/main.php');
     } else {
